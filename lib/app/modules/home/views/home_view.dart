@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:interactive_cares_task/app/data/constants/app_colors.dart';
-import 'package:interactive_cares_task/app/data/constants/app_image.dart';
-import 'package:interactive_cares_task/app/data/dummy_data/course_dummy_data.dart';
 import 'package:interactive_cares_task/app/modules/home/views/widgets/course_tile.dart';
 import 'package:interactive_cares_task/app/routes/app_pages.dart';
-import 'package:interactive_cares_task/app/utilities/widgets/common_widgets/primary_button.dart';
 
 import '../controllers/home_controller.dart';
 

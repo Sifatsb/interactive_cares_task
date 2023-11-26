@@ -1,5 +1,3 @@
-import 'package:interactive_cares_task/app/data/constants/app_image.dart';
-
 class Course {
   final String id;
   final String title;
@@ -18,12 +16,14 @@ class Course {
 
 class Module {
   final String title;
+  final String onlineVideoLink;
 
-  Module(this.title);
+  Module({required this.title, required this.onlineVideoLink});
 }
 
-List<Module> modules = [
-  Module("Module 1: Introduction"),
-  Module("Module 2: Getting Started"),
-  Module("Module 3: Advanced Topics"),
-];
+class Bookmark {
+  final String module;
+  final double time;
+
+  Bookmark({required this.module, required this.time});
+}

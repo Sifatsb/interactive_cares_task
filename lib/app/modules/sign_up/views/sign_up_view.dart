@@ -84,19 +84,24 @@ class SignUpView extends GetView<SignUpController> {
                 ),
 
                 60.verticalSpacing,
-                Obx(() => controller.loadingController.isLoading
-                    ? const CircularProgressIndicator(color: AppColors.primaryColor,)
-                    : PrimaryButton(
-                        onTap: () {
-                          if (controller.validate()) {
-                            controller.registerWithEmailAndPassword(
-                              email: controller.emailTextController.text,
-                              password: controller.passwordTextController.text,
-                            );
-                          }
-                        },
-                        text: 'Sign Up',
-                      )),
+                Obx(
+                  () => controller.loadingController.isLoading
+                      ? const CircularProgressIndicator(
+                          color: AppColors.primaryColor,
+                        )
+                      : PrimaryButton(
+                          onTap: () {
+                            if (controller.validate()) {
+                              controller.registerWithEmailAndPassword(
+                                email: controller.emailTextController.text,
+                                password:
+                                    controller.passwordTextController.text,
+                              );
+                            }
+                          },
+                          text: 'Sign Up',
+                        ),
+                ),
               ],
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:interactive_cares_task/app/data/dummy_data/course_dummy_data.dart';
 import 'package:interactive_cares_task/app/data/dummy_data/data_controller.dart';
 import 'package:interactive_cares_task/app/routes/app_pages.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -10,9 +11,17 @@ class CoursePlayerController extends GetxController {
   RxInt currentModuleIndex = 0.obs;
   RxBool isVideoCompleted = false.obs;
 
+  RxList<Bookmark> bookmarks = <Bookmark>[].obs;
+
   DataController dataController = Get.find();
 
-  void _videoController() {
+  List<Module> modules = [
+    Module(title: "Module 1: Introduction", onlineVideoLink: 'https://www.youtube.com/watch?v=nXXvWXgXEYs'),
+    Module(title: "Module 2: Getting Started", onlineVideoLink: 'https://www.youtube.com/watch?v=bzhmgkuR0dU&t=12s'),
+    Module(title: "Module 3: Advanced Topics", onlineVideoLink: 'https://www.youtube.com/watch?v=9OxxU4RlCkk'),
+  ];
+
+  void playVideo() {
     youtubeController = YoutubePlayerController(
       initialVideoId:
           YoutubePlayer.convertUrlToId(dataController.videoUrl.value) ?? '',
@@ -40,9 +49,26 @@ class CoursePlayerController extends GetxController {
     );
   }
 
+  // Function to add a bookmark
+  void addBookmark() {
+    double currentTime = youtubeController.value.position.inSeconds.toDouble();
+    String currentModule = modules[currentModuleIndex.value].title;
+    Bookmark bookmark = Bookmark(module: currentModule, time: currentTime);
+
+      bookmarks.add(bookmark);
+
+  }
+
+  // Function to remove a bookmark
+  void removeBookmark(Bookmark bookmark) {
+
+      bookmarks.remove(bookmark);
+
+  }
+
   @override
   void onInit() {
-    _videoController();
+    playVideo();
     super.onInit();
   }
 

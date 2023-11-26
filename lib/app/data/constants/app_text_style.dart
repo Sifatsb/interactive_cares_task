@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'app_colors.dart';
-
 class AppTextStyle {
   static const textStyle12WhiteW500 = TextStyle(
     color: Colors.white,
@@ -23,7 +21,4 @@ class AppTextStyle {
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
   );
-
-
-
 }

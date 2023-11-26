@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustomAlertDialogue extends StatelessWidget {
   final String? title;
@@ -25,7 +24,7 @@ class CustomAlertDialogue extends StatelessWidget {
       child: CupertinoAlertDialog(
         title: InkWell(
           onTap: onYesTap,
-          child: Text(subTitle ?? ''),
+          child: Text(subTitle),
         ),
       ),
     );
