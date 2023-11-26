@@ -12,6 +12,7 @@ import '../controllers/sign_up_controller.dart';
 
 class SignUpView extends GetView<SignUpController> {
   const SignUpView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,10 +42,10 @@ class SignUpView extends GetView<SignUpController> {
 
                 /// Password Text field
                 Obx(
-                      () => CustomTextFormField(
+                  () => CustomTextFormField(
                     iconOnTap: () {
                       controller.isObscureText.value =
-                      !controller.isObscureText.value;
+                          !controller.isObscureText.value;
                     },
                     controller: controller.passwordTextController,
                     obsCureText: controller.isObscureText.value,
@@ -64,14 +65,18 @@ class SignUpView extends GetView<SignUpController> {
                 20.verticalSpacing,
 
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Get.toNamed(Routes.LOGIN);
                   },
                   child: RichText(
                     text: const TextSpan(
                       children: <TextSpan>[
-                        TextSpan(text: 'Already have an account? ', style: AppTextStyle.textStyle12GreyW600),
-                        TextSpan(text: 'Login Now', style: AppTextStyle.textStyle12BlackW700)
+                        TextSpan(
+                            text: 'Already have an account? ',
+                            style: AppTextStyle.textStyle12GreyW600),
+                        TextSpan(
+                            text: 'Login Now',
+                            style: AppTextStyle.textStyle12BlackW700)
                       ],
                     ),
                     textScaleFactor: 0.5,
@@ -82,13 +87,16 @@ class SignUpView extends GetView<SignUpController> {
                 Obx(() => controller.loadingController.isLoading
                     ? const CircularProgressIndicator()
                     : PrimaryButton(
-                  onTap: () {
-                    if (controller.validate()) {
-                      Get.toNamed(Routes.SIGN_UP);
-                    }
-                  },
-                  text: 'Login',
-                )),
+                        onTap: () {
+                          if (controller.validate()) {
+                            controller.registerWithEmailAndPassword(
+                              email: controller.emailTextController.text,
+                              password: controller.passwordTextController.text,
+                            );
+                          }
+                        },
+                        text: 'Sign Up',
+                      )),
               ],
             ),
           ),

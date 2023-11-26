@@ -65,14 +65,18 @@ class LoginView extends GetView<LoginController> {
                 20.verticalSpacing,
 
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Get.toNamed(Routes.SIGN_UP);
                   },
                   child: RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                       children: <TextSpan>[
-                        TextSpan(text: 'Don\'t have an account? ', style: AppTextStyle.textStyle12GreyW600),
-                        TextSpan(text: 'Register Now', style: AppTextStyle.textStyle12BlackW700)
+                        TextSpan(
+                            text: 'Don\'t have an account? ',
+                            style: AppTextStyle.textStyle12GreyW600),
+                        TextSpan(
+                            text: 'Register Now',
+                            style: AppTextStyle.textStyle12BlackW700)
                       ],
                     ),
                     textScaleFactor: 0.5,
@@ -85,7 +89,10 @@ class LoginView extends GetView<LoginController> {
                     : PrimaryButton(
                         onTap: () {
                           if (controller.validate()) {
-                            Get.toNamed(Routes.SIGN_UP);
+                            controller.signInWithEmailAndPassword(
+                              email: controller.emailTextController.text,
+                              password: controller.passwordTextController.text,
+                            );
                           }
                         },
                         text: 'Login',

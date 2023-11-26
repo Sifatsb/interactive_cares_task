@@ -5,8 +5,9 @@ import 'package:interactive_cares_task/app/utilities/widgets/loader/loading.cont
 
 class Initializer {
   static Future<void> init() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    Firebase.initializeApp();
+    WidgetsFlutterBinding.ensureInitialized(
+    );
+    await Firebase.initializeApp();
     _initGlobalLoading();
   }
 
