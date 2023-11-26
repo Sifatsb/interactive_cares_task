@@ -84,19 +84,24 @@ class LoginView extends GetView<LoginController> {
                 ),
 
                 60.verticalSpacing,
-                Obx(() => controller.loadingController.isLoading
-                    ? const CircularProgressIndicator(color: AppColors.primaryColor,)
-                    : PrimaryButton(
-                        onTap: () {
-                          if (controller.validate()) {
-                            controller.signInWithEmailAndPassword(
-                              email: controller.emailTextController.text,
-                              password: controller.passwordTextController.text,
-                            );
-                          }
-                        },
-                        text: 'Login',
-                      )),
+                Obx(
+                  () => controller.loadingController.isLoading
+                      ? const CircularProgressIndicator(
+                          color: AppColors.primaryColor,
+                        )
+                      : PrimaryButton(
+                          onTap: () {
+                            if (controller.validate()) {
+                              controller.signInWithEmailAndPassword(
+                                email: controller.emailTextController.text,
+                                password:
+                                    controller.passwordTextController.text,
+                              );
+                            }
+                          },
+                          text: 'Login',
+                        ),
+                ),
               ],
             ),
           ),
