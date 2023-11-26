@@ -11,6 +11,7 @@ dependencies:
   firebase_auth: ^4.14.1
   firebase_core: ^2.23.0
   video_player: ^2.8.1
+  youtube_player_flutter: ^8.1.2
 
   flutter: 
     sdk: flutter
@@ -22,4 +23,8 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+
+
+  assets:
+    - assets/images/
 

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/course_player/bindings/course_player_binding.dart';
+import '../modules/course_player/views/course_player_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -31,6 +33,12 @@ class AppPages {
       page: () => const SignUpView(),
       binding: SignUpBinding(),
       transition: Transition.downToUp,
+    ),
+    GetPage(
+      name: _Paths.COURSE_PLAYER,
+      page: () => const CoursePlayerView(),
+      binding: CoursePlayerBinding(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }

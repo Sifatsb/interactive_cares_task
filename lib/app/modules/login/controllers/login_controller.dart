@@ -8,8 +8,8 @@ import 'package:interactive_cares_task/app/utilities/widgets/loader/loading.cont
 class LoginController extends GetxController {
   LoadingController loadingController = Get.find();
 
-  TextEditingController emailTextController = TextEditingController();
-  TextEditingController passwordTextController = TextEditingController();
+  TextEditingController emailTextController = TextEditingController(text: 'abc@gmail.com');
+  TextEditingController passwordTextController = TextEditingController(text: '12345678');
 
   RxBool isObscureText = true.obs;
 
@@ -40,7 +40,7 @@ class LoginController extends GetxController {
       );
       if (userCredential != null) {
         loadingController.isLoading = false;
-        Get.toNamed(Routes.HOME);
+        Get.offAllNamed(Routes.HOME);
       } else {
         loadingController.isLoading = false;
         showBasicFailedSnackBar(message: 'Something went wrong');

@@ -41,7 +41,7 @@ class SignUpController extends GetxController {
 
       if (userCredential != null) {
         loadingController.isLoading = false;
-        Get.toNamed(Routes.HOME);
+        Get.offAllNamed(Routes.HOME);
       } else {
         loadingController.isLoading = false;
         showBasicFailedSnackBar(message: 'Something went wrong');

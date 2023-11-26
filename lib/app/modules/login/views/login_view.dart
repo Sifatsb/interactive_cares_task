@@ -85,7 +85,7 @@ class LoginView extends GetView<LoginController> {
 
                 60.verticalSpacing,
                 Obx(() => controller.loadingController.isLoading
-                    ? const CircularProgressIndicator()
+                    ? const CircularProgressIndicator(color: AppColors.primaryColor,)
                     : PrimaryButton(
                         onTap: () {
                           if (controller.validate()) {
