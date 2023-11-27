@@ -36,11 +36,18 @@ The Flutter Edtech application utilizes Firebase Authentication for user authent
 
 ## Screenshots 
 
+<img src = './screenshots/1.png' />
 
-![img](./screenshots/1.png)
-![img](./screenshots/2.png)
-![img](./screenshots/3.png)
-![img](./screenshots/4.png)
-![img](./screenshots/5.png)
-![img](./screenshots/22.png)
-![img](./screenshots/33.png)
+[//]: # (![img]&#40;./screenshots/1.png&#41;)
+
+[//]: # (![img]&#40;./screenshots/2.png&#41;)
+
+[//]: # (![img]&#40;./screenshots/3.png&#41;)
+
+[//]: # (![img]&#40;./screenshots/4.png&#41;)
+
+[//]: # (![img]&#40;./screenshots/5.png&#41;)
+
+[//]: # (![img]&#40;./screenshots/22.png&#41;)
+
+[//]: # (![img]&#40;./screenshots/33.png&#41;)
