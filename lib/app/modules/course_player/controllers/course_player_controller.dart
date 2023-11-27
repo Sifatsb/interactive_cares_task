@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:interactive_cares_task/app/data/dummy_data/course_dummy_data.dart';
 import 'package:interactive_cares_task/app/data/dummy_data/data_controller.dart';
@@ -16,12 +17,19 @@ class CoursePlayerController extends GetxController {
   DataController dataController = Get.find();
 
   List<Module> modules = [
-    Module(title: "Module 1: Introduction", onlineVideoLink: 'https://www.youtube.com/watch?v=nXXvWXgXEYs'),
-    Module(title: "Module 2: Getting Started", onlineVideoLink: 'https://www.youtube.com/watch?v=bzhmgkuR0dU&t=12s'),
-    Module(title: "Module 3: Advanced Topics", onlineVideoLink: 'https://www.youtube.com/watch?v=9OxxU4RlCkk'),
+    Module(
+        title: "Module 1: Introduction",
+        onlineVideoLink: 'https://www.youtube.com/watch?v=nXXvWXgXEYs'),
+    Module(
+        title: "Module 2: Getting Started",
+        onlineVideoLink: 'https://www.youtube.com/watch?v=bzhmgkuR0dU&t=12s'),
+    Module(
+        title: "Module 3: Advanced Topics",
+        onlineVideoLink: 'https://www.youtube.com/watch?v=9OxxU4RlCkk'),
   ];
 
   void playVideo() {
+    debugPrint(dataController.videoUrl.value);
     youtubeController = YoutubePlayerController(
       initialVideoId:
           YoutubePlayer.convertUrlToId(dataController.videoUrl.value) ?? '',
@@ -55,15 +63,19 @@ class CoursePlayerController extends GetxController {
     String currentModule = modules[currentModuleIndex.value].title;
     Bookmark bookmark = Bookmark(module: currentModule, time: currentTime);
 
-      bookmarks.add(bookmark);
-
+    bookmarks.add(bookmark);
   }
 
   // Function to remove a bookmark
   void removeBookmark(Bookmark bookmark) {
+    bookmarks.remove(bookmark);
+  }
 
-      bookmarks.remove(bookmark);
-
+  // Function to seek to a relative time in the video
+  void seekToRelativeTime(double seconds) {
+    double newTime =
+        youtubeController.value.position.inSeconds.toDouble() + seconds;
+    youtubeController.seekTo(Duration(seconds: newTime.toInt()));
   }
 
   @override
