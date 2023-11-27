@@ -34,20 +34,18 @@ The Flutter Edtech application utilizes Firebase Authentication for user authent
 
 -Add the following dependency to your pubspec.yaml:
 
-## Screenshots 
+## Screenshots
 
-<img src = './screenshots/1.png' />
+![img](./screenshots/1.png =250x)
 
-[//]: # (![img]&#40;./screenshots/1.png&#41;)
+![img](./screenshots/2.png =250x)
 
-[//]: # (![img]&#40;./screenshots/2.png&#41;)
+![img](./screenshots/3.png =250x)
 
-[//]: # (![img]&#40;./screenshots/3.png&#41;)
+![img](./screenshots/4.png =250x)
 
-[//]: # (![img]&#40;./screenshots/4.png&#41;)
+![img](./screenshots/5.png =250x)
 
-[//]: # (![img]&#40;./screenshots/5.png&#41;)
+![img](./screenshots/22.png =250x)
 
-[//]: # (![img]&#40;./screenshots/22.png&#41;)
-
-[//]: # (![img]&#40;./screenshots/33.png&#41;)
+![img](./screenshots/33.png =250x)
